@@ -1,0 +1,189 @@
+<!-- <!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+           /* background-image: url("OIP.jpg");*/
+           background-color: rgb(255, 255, 255);
+        }
+        #grocery-list {
+            max-width: 400px;
+            margin: 0 auto;
+            /*border: 5px solid #ccc;*/
+            border-color: rgb(183, 115, 183);
+            border-style: solid;
+            padding: 20px;
+            text-align: center;
+            /*border-color: mediumpurple;*/
+
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        button {
+            background-color:  rgb(183, 115, 183);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer; 
+            
+
+        }
+       
+       /* h1{
+            font-family: cursive;
+            align-items: center;
+            color: purple;
+            border-spacing: !important;
+            border-style: double;
+            border-width: 5px 5px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0;
+
+        }*/
+        h1{
+            font-family: cursive;
+            align-items: center;
+            color: rgb(183, 115, 183);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2{
+            font-family: cursive ;
+            margin: 1px;
+            padding: 5px;
+            color:rgb(183, 115, 183) ;
+            align-items: flex-start;
+            font-size: 40px;
+
+        }
+        #p1{
+            font-family:cursive;
+            font-size: 20px;
+            color: rgb(183, 115, 183) ;
+            padding: 20px;
+            margin: 2px;
+            font-display: inline;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="grocery-list">
+        <h1 class="h1">Grocery List</h1>
+        <input type="text" id="item-input" placeholder="Add a grocery items here :)">
+        <button id="add-button">Add</button>
+        <ul id="items">
+        </ul>
+    </div>
+    <br>
+    <hr>
+
+
+    <script>
+        const itemInput = document.getElementById('item-input');
+        const addButton = document.getElementById('add-button');
+        const itemsList = document.getElementById('items');
+        let itemCount = 0;
+
+        addButton.addEventListener('click', addItem);
+
+        function addItem() {
+            const newItemText = itemInput.value.trim();
+            if (newItemText !== '') {
+                itemCount++;
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${itemCount}. ${newItemText}</span>
+                    <button class="delete-button">Delete</button>
+                `;
+                itemsList.appendChild(li);
+                itemInput.value = '';
+                addDeleteEvent(li);
+            }
+        }
+
+        function addDeleteEvent(item) {
+            const deleteButton = item.querySelector('.delete-button');
+            deleteButton.addEventListener('click', () => {
+                itemsList.removeChild(item);
+                itemCount--; // Update the item count when an item is deleted
+                renumberItems();
+            });
+        }
+
+        function renumberItems() {
+            const items = itemsList.querySelectorAll('li');
+            itemCount = 0;
+            items.forEach((item, index) => {
+                itemCount++;
+                const itemText = item.querySelector('span');
+                itemText.textContent = `${itemCount}. ${itemText.textContent.slice(3)}`;
+            });
+        }
+    </script>
+    <br>
+    <div>
+        <h2 class="h2">Few words from my side </h2>
+        <p id="p1">-Created a grocery list, I used HTML, CSS, and JavaScript is a practical and thoughtful project inspired by my mom.
+     <br>
+            -It's a great way to combine my web development skills with a real-life scenario to make her life a little easier. 
+    <br>
+         -It's a meaningful way to show my appreciation and use my skills to simplify her life. </p>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoe Store</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="/shoes13.jpg" alt="Shoe" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <h2>Nike Running Shoes</h2>
+        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Price: $99.99</p>
+        <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap Bundle JS (including Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    function addToCart() {
+      // Here you can add your logic to handle adding the item to the cart
+      alert("Item added to cart!");
+    }
+  </script>
+</body>
+</html> -->
